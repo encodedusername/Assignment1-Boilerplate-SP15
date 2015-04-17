@@ -32,6 +32,8 @@
     
 
   <link rel="stylesheet" href="http://static.tumblr.com/wfauvgx/yEYnmfr7d/main.css">
+  <link rel="stylesheet" href="css/fetch.css">
+   
     
       <link rel="stylesheet" href="css/custom.css">
 
@@ -41,6 +43,9 @@
     
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> 
+     <script src="js/fetch.js"></script> 
+
+    
 </head>
 
 
@@ -49,27 +54,7 @@
     {{{body}}}    
      <!-- Masonry -->
     <script type="text/javascript" src="http://masonry.desandro.com/masonry.pkgd.min.js"></script>
-    <script>
-
-        $('.mainContent').masonry({
-          columnWidth: 500,
-          gutter: 10,
-          itemSelector: '.post'
-        }); 
-            
-        $(window).on("load", function() {
-            // with jQuery
-            $('.mainContent').masonry({
-              columnWidth: 500,
-              gutter: 10,
-              itemSelector: '.post'
-            }).on('layoutComplete', function() {
-                $("#sidebar").height($(document).height());
-            });
-            
-        });
-
-    </script> 
+    
     
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="js/bootstrap.js"></script>

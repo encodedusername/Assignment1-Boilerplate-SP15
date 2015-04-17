@@ -201,20 +201,24 @@ app.get('/feed', ensureAuthenticated, function(req, res){
             //insert json object into image array
             return tempJSON;
           });
+          
           res.render('feed', {photos: imageArr});
         }
       }); 
+
     }
   });
 });
 
 app.get('/dash', ensureAuthenticated, function(req, res) {
   var query  = models.User.where({ name: "facebook" + req.user.id });
+
   query.findOne(function (err, user) {
     if (err) return handleError(err);
     if (user) {
       res.render('dash');
     }
+    console.log("User not found.");
   });
 });
 
@@ -318,6 +322,7 @@ app.get('/auth/instagram/callback',
 app.get('/auth/facebook/callback', 
   passport.authenticate('facebook', { failureRedirect: '/login'}),
   function(req, res) {
+    console.log("In callback");
     res.redirect('/dash');
     //res.redirect('/feed');
   });
