@@ -33,7 +33,7 @@ var FACEBOOK_CALLBACK_URL = process.env.FACEBOOK_CALLBACK_URL;
 var FACEBOOK_ACCESS_TOKEN = "";
 
 //connect to database
-mongoose.connect(process.env.MONGODB_CONNECTION_URL);
+mongoose.connect(process.env.MONGOLAB_URI || process.env.MONGODB_CONNECTION_URL);
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function (callback) {
