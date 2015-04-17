@@ -1,4 +1,44 @@
+<header class="mainHeader animatedParent ">
+
+  <div class="wrapper">
+    
+    <div class="authorBox">
+        <ul>
+            <li><a href="http://material2-premium-theme.tumblr.com/"><img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xfa1/v/t1.0-1/p100x100/11042956_832842213453857_6312907393988951601_n.jpg?oh=68b2a2d7c0a56290185ce5d7268048f4&oe=55DB8181&__gda__=1436657160_4ccdf7a0992a57d1398cfaed796abd08" alt="Rosea Themes" class="circle"></a></li>
+            <li><h3>alealealejandro__</h3></li>  
+        </ul>
+    </div><!-- /.authorBox -->
+    
+	 
+        
+  </div><!-- /.wrapper -->
+</header><!-- /.mainHeader -->
+
+
+<div class="container">
+        
+    
+    <section class="mainContent js-masonry">
+    
+    
 {{#each photos}}
-  <img src="{{url}}" class="img-responsive" class="img hashtag-img">
-  <p class="caption">{{caption}}</p>
-{{/each}}
+ 
+	<article class="post formatPhoto "  >
+            <figure class="postImage effect-sadie">
+            	
+					<figcaption>
+
+                         <div class="meta"><i class="fa fa-clock-o"></i> {{caption}}</div>
+
+		            </figcaption>
+		            
+				<img src="{{url}}" class="img-responsive" class="img hashtag-img">
+			</figure>
+    </article>
+
+   {{/each}}
+
+   
+    </section>
+
+</div>

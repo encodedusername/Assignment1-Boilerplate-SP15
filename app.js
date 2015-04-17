@@ -196,8 +196,8 @@ app.get('/feed', ensureAuthenticated, function(req, res){
           var imageArr = data.map(function(item) {
             //create temporary json object
             tempJSON = {};
-            tempJSON.url = item.images.low_resolution.url;
-            tempJSON.caption = item.caption.text;
+            tempJSON.url = item.images.low_resolution.url ;
+            tempJSON.caption = (item.caption) ? item.caption.text : '';
             //insert json object into image array
             return tempJSON;
           });

@@ -14,11 +14,62 @@
     <![endif]-->        
       <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
       <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
+
+      <!-- Google Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700&subset=latin,cyrillic-ext,greek-ext,vietnamese,latin-ext,cyrillic' rel='stylesheet' type='text/css'>
+    
+    <!-- Awesome Font -->    
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    
+    <!-- Magnific Popup CSS -->
+    <link rel="stylesheet" href="http://static.tumblr.com/wfauvgx/UaAnk8mid/magnific-popup.css">
+    
+    <!-- CSS3 Animate it -->
+    <link rel="stylesheet" href="http://static.tumblr.com/wfauvgx/2Lunlpqar/animations.css">
+
+    
+
+    
+
+  <link rel="stylesheet" href="http://static.tumblr.com/wfauvgx/yEYnmfr7d/main.css">
+    
+      <link rel="stylesheet" href="css/custom.css">
+
+    <!--[if lt IE 9]>
+        <script src="http://static.tumblr.com/vookvsa/elOly45v5/html5.js"></script>
+    <![endif]-->
+    
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> 
 </head>
+
 
 <body>
 
     {{{body}}}    
+     <!-- Masonry -->
+    <script type="text/javascript" src="http://masonry.desandro.com/masonry.pkgd.min.js"></script>
+    <script>
+
+        $('.mainContent').masonry({
+          columnWidth: 500,
+          gutter: 10,
+          itemSelector: '.post'
+        }); 
+            
+        $(window).on("load", function() {
+            // with jQuery
+            $('.mainContent').masonry({
+              columnWidth: 500,
+              gutter: 10,
+              itemSelector: '.post'
+            }).on('layoutComplete', function() {
+                $("#sidebar").height($(document).height());
+            });
+            
+        });
+
+    </script> 
     
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="js/bootstrap.js"></script>
