@@ -209,7 +209,7 @@ app.get('/feed', ensureAuthenticated, function(req, res){
 });
 
 app.get('/dash', ensureAuthenticated, function(req, res) {
-  var query  = models.User.where({ name: req.user.username });
+  var query  = models.User.where({ name: "facebook" + req.user.id });
   query.findOne(function (err, user) {
     if (err) return handleError(err);
     if (user) {
@@ -219,7 +219,7 @@ app.get('/dash', ensureAuthenticated, function(req, res) {
 });
 
 app.get('/fetch-calc', ensureAuthenticated, function(req, res) {
-  var query  = models.User.where({ name: req.user.username });
+  var query  = models.User.where({ name: "facebook" + req.user.id });
   query.findOne(function (err, user) {
     if (err) return handleError(err);
     if (user) {
