@@ -241,7 +241,7 @@ app.get('/fetch-calc', ensureAuthenticated, function(req, res) {
         }
         //determine percentage matching 'pink'
         if (likes.length < 1)
-          redirect.l_pct = 0;
+          results.l_pct = 0;
         else
           results.l_pct = (lCount / likes.length * 100).toFixed(2);
         //retrieve posts
