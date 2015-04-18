@@ -240,7 +240,10 @@ app.get('/fetch-calc', ensureAuthenticated, function(req, res) {
           }
         }
         //determine percentage matching 'pink'
-        results.l_pct = (lCount / likes.length * 100).toFixed(2);
+        if (likes.length < 1)
+          redirect.l_pct = 0;
+        else
+          results.l_pct = (lCount / likes.length * 100).toFixed(2);
         //retrieve posts
         graph.get('/me/posts', function(err, posts) {
           if (err) console.log(err);
@@ -257,11 +260,17 @@ app.get('/fetch-calc', ensureAuthenticated, function(req, res) {
             }
           }
           //determine percentage matching 'pink'
-          results.p_pct = (pCount / posts.length * 100).toFixed(2);
+          if (posts.length < 1)
+            results.p_pct = 0;
+          else
+            results.p_pct = (pCount / posts.length * 100).toFixed(2);
           //determine overall
           var oCount = pCount + lCount;
           var sum = posts.length + likes.length;
-          results.overall = (oCount / sum * 100).toFixed(2);
+          if (sum < 1)
+            results.overall = 0;
+          else
+            results.overall = (oCount / sum * 100).toFixed(2);
           //determine verdict
           if (results.overall > 0.03) {
             results.verdict = "I'm sorry that people are so jealous of me... but I can't help it that I'm so popular.";
