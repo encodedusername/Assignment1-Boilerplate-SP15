@@ -1,21 +1,18 @@
-(function() {
-  var $;
 
-  $ = jQuery;
+$(document).ready(function() {
+  $("#results").hide();
 
-  $(document).ready(function() {
-    $("#results").hide();
-    
-    return $('#fetch').on('click', function() {
-      $("#fetch").delay(3200).fadeOut(300);
-    // Show the div in 5s
-    $("#results").delay(3200).fadeIn(300);
-    
-      
-      return $(this).toggleClass('button--loading');
-      
+  $('#fetch').click(function() {
+    $(this).fadeOut(300, function() {
+      $.get('/fetch-calc').then(function(data) {
+              // Show the div in 5s
+          //$this.toggleClass('button--loading');
+          $("#l_pct").text(data.l_pct + "%");
+          $("#p_pct").text(data.p_pct + "%");
+          $("#overall").text(data.overall + "%");
+          //$("#message").text(data.message);
+          $("#results").fadeIn(300);
+      });
     });
   });
-
-}).call(this);
-
+});

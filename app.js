@@ -202,7 +202,7 @@ app.get('/feed', ensureAuthenticated, function(req, res){
             return tempJSON;
           });
           
-          res.render('feed', {photos: imageArr});
+          res.render('feed', {photos: imageArr, username: user.name});
         }
       }); 
 
@@ -218,7 +218,6 @@ app.get('/dash', ensureAuthenticated, function(req, res) {
     if (user) {
       res.render('dash');
     }
-    console.log("User not found.");
   });
 });
 
@@ -322,7 +321,6 @@ app.get('/auth/instagram/callback',
 app.get('/auth/facebook/callback', 
   passport.authenticate('facebook', { failureRedirect: '/login'}),
   function(req, res) {
-    console.log("In callback");
     res.redirect('/dash');
     //res.redirect('/feed');
   });
